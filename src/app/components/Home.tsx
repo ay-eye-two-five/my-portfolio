@@ -1,6 +1,20 @@
-// app/components/Hero.tsx
+// app/components/Home.tsx
 import Image from "next/image";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
+
+function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      target={href.startsWith("/") ? undefined : "_blank"}
+      rel={href.startsWith("/") ? undefined : "noopener noreferrer"}
+      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+    >
+      {icon}
+    </a>
+  );
+}
 
 export default function Hero() {
   return (
