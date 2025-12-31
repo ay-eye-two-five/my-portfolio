@@ -6,5 +6,4 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-slate-950 flex flex-col">
       <Hero/>
     </main>
-  );
 }
