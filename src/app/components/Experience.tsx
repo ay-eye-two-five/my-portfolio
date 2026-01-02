@@ -51,7 +51,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Qral Group",
-    logo: "/qral.jpg",
+    logo: "/favicon.ico",
     logoClasses: "w-14 h-14",
     website: "https://qral.com",
     role: {
@@ -66,7 +66,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Bristol Myers Squibb",
-    logo: "/bms.png",
+    logo: "/bms2.png",
     logoClasses: "w-16 h-16",
     website: "https://bms.com",
     role: {
@@ -142,7 +142,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "UC Davis Air Quality Research Center",
-    logo: "/davis.jpg",
+    logo: "/ucd.png",
     logoClasses: "w-16 h-16",
     website: "https://ucdavis.edu",
     role: {
