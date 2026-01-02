@@ -1,10 +1,10 @@
 // app/components/Hero.tsx
 import Image from "next/image";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, GraduationCap } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20 md:py-32">
+    <section className="max-w-4xl mx-auto px-6 py-20 md:py-2">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         
         {/* Left Side: Text Content */}
@@ -25,10 +25,11 @@ export default function Hero() {
 
           {/* Social Links */}
           <div className="mt-4 flex items-center justify-center md:justify-start gap-6">
-            <SocialLink href="https://github.com/yourusername" icon={<Github size={20} />} label="GitHub" />
-            <SocialLink href="https://linkedin.com/in/asefislam" icon={<Linkedin size={20} />} label="LinkedIn" />
-            <SocialLink href="mailto:your-email@stanford.edu" icon={<Mail size={20} />} label="Email" />
+            <SocialLink href="mailto:asef@cs.stanford.edu" icon={<Mail size={20} />} label="Email" />
             <SocialLink href="/resume.pdf" icon={<FileText size={20} />} label="Resume" />
+            <SocialLink href="https://linkedin.com/in/asefislam" icon={<Linkedin size={20} />} label="LinkedIn" />
+            <SocialLink href="https://scholar.google.com/citations?user=ttaypUQAAAAJ&hl=en" icon={<GraduationCap size={20} />} label="Scholar" />
+            <SocialLink href="https://github.com/ay-eye-two-five" icon={<Github size={20} />} label="GitHub" />
           </div>
         </div>
 
@@ -47,6 +48,7 @@ export default function Hero() {
               fill
               className="object-cover"
               priority
+              quality={100}
             />
           </div>
         </div>
