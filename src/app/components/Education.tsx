@@ -9,7 +9,7 @@ type Degree = {
   subSchool: string;
   period: string;
   gpa: string;
-  description: string;
+  description?: string;
   status: "completed" | "in-progress";
   progress?: number; 
   diplomaUrl?: string; 
@@ -36,7 +36,7 @@ const education: School[] = [
         subSchool: "School of Engineering",
         period: "2021 - 2024", 
         gpa: "3.5",
-        description: "Specializing in Artificial Intelligence.",
+        description: "Specializing in Artificial Intelligence",
         status: "completed", 
         diplomaUrl: "/mscs.pdf", 
       },

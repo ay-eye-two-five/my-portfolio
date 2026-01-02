@@ -106,7 +106,7 @@ const experiences: ExperienceItem[] = [
       period: "January 2019 – May 2020",
       location: "Baltimore, MD",
       description: [
-        "Mentored 200+ undergraduates in MATLAB & Java courses by debugging complex code and simplifying engineering concepts"
+        "Mentored 200+ undergraduates in MATLAB & Java courses through debugging complex code and simplifying engineering concepts by leading weekly discussions and office hours"
       ],
     },
   },

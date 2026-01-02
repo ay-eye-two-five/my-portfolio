@@ -81,7 +81,7 @@ export default function Projects() {
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-12"> {/* Increased max-width to fit 3 cols better */}
       <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 border-b pb-2 border-slate-200 dark:border-slate-800">
-        PUBLICATIONS & RESEARCH
+        PROJECTS & RESEARCH
       </h2>
 
       {/* Grid changed to lg:grid-cols-3 */}
