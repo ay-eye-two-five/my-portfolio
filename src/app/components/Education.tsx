@@ -29,7 +29,7 @@ const education: School[] = [
     logo: "/stanford.png", 
     // CHANGE THIS STRING TO ADJUST STANFORD SIZE INDEPENDENTLY
     logoClasses: "w-20 h-20", 
-    website: "https://stanford.edu",
+    website: "https://www.stanford.edu",
     degrees: [
       {
         title: "MS Computer Science",
@@ -56,7 +56,7 @@ const education: School[] = [
     logo: "/jhu.png", 
     // CHANGE THIS STRING TO ADJUST JHU SIZE INDEPENDENTLY
     logoClasses: "w-20 h-20", 
-    website: "https://jhu.edu",
+    website: "https://www.jhu.edu",
     degrees: [
       {
         title: "BS Biomedical Engineering & Computer Science",
@@ -83,7 +83,7 @@ const education: School[] = [
 export default function Education() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-2">      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
         {education.map((edu, index) => (
           <div
             key={index}
