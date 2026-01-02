@@ -1,20 +1,6 @@
-// app/components/Home.tsx
+// app/components/Hero.tsx
 import Image from "next/image";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
-
-function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      target={href.startsWith("/") ? undefined : "_blank"}
-      rel={href.startsWith("/") ? undefined : "noopener noreferrer"}
-      className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-    >
-      {icon}
-    </a>
-  );
-}
 
 export default function Hero() {
   return (
@@ -28,17 +14,17 @@ export default function Hero() {
           </h1>
           
           <h2 className="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            MSCS @ Stanford University
+            I am a continuous learner and problem solver
           </h2>
           
           <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed max-w-lg mx-auto md:mx-0">
-            Specializing in Artificial Intelligence and Biomedical Informatics. 
-            Building the intersection of systems biology and scalable ML.
-            Previously at Johns Hopkins.
+            With 10+ years experience researching AI applications in medicine, <br/> 
+            3.5 years of full time work experience (+0.5 as an intern), <br/>
+            9 publications, 1 patent, and 45+ research citations. 
           </p>
 
           {/* Social Links */}
-          <div className="mt-8 flex items-center justify-center md:justify-start gap-6">
+          <div className="mt-4 flex items-center justify-center md:justify-start gap-6">
             <SocialLink href="https://github.com/yourusername" icon={<Github size={20} />} label="GitHub" />
             <SocialLink href="https://linkedin.com/in/asefislam" icon={<Linkedin size={20} />} label="LinkedIn" />
             <SocialLink href="mailto:your-email@stanford.edu" icon={<Mail size={20} />} label="Email" />
