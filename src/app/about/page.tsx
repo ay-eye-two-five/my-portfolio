@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import InteractiveGlobe from "@/app/components/InteractiveGlobe";
-import { MapPin, Calendar, X, Globe as GlobeIcon, Camera, Cpu, Activity, GraduationCap } from "lucide-react";
+import CourseList from "@/app/components/CourseList"; // IMPORT THIS
+import { MapPin, Calendar, X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
 
 // --- Data Definitions ---
 
@@ -34,10 +35,11 @@ type Interest = {
   id: string;
   title: string;
   description?: string;
-  image: string; // Thumbnail image
-  type: 'globe' | 'gallery'; // Special type to know if we render the map
+  image: string;
+  // Added 'list' as a valid type
+  type: 'globe' | 'gallery' | 'list';
   icon: React.ElementType;
-  fullContent?: string; // Text for non-globe modals
+  fullContent?: string;
 };
 
 const interests: Interest[] = [
@@ -45,44 +47,92 @@ const interests: Interest[] = [
     id: "travel",
     title: "Travel",
     //description: "Mapping my journey across cities, homes, and adventures.",
-    image: "/globe.png", // You'll need a generic travel photo here
+    image: "/globe.png", 
     type: "globe",
     icon: GlobeIcon,
   },
   {
-    id: "photo",
+    id: "soccer",
     title: "Soccer",
-    //description: "Capturing landscapes, urban geometry, and moments in time.",
-    image: "/photo-interest.jpg",
+    //description: "Player and fan. From Sunday leagues to watching the World Cup.",
+    image: "/soccer-interest.jpg", 
     type: "gallery",
     icon: Activity,
-    fullContent: "Here is where you would put a longer description of your photography hobby, or perhaps a grid of your favorite shots. Photography allows me to document the rapid changes in urban environments...",
+    fullContent: "Soccer has been a huge part of my life since childhood. Whether it's playing in local competitive leagues or waking up at 4 AM to watch European matches, the beautiful game connects me to a global community. I currently play as a midfielder in a local Sacramento league.",
   },
   {
     id: "classes",
-    title: "Classes",
-    //description: "Prototyping useful gadgets, fixing things, and makerspace projects.",
-    image: "/3dprint-interest.jpg",
-    type: "gallery",
+    title: "Classes & Learning",
+    //description: "Continuous learning in ML, Systems Design, and Public Policy.",
+    image: "/classes-interest.jpg", 
+    type: "list", // SPECIAL TYPE
     icon: GraduationCap,
-    fullContent: "I enjoy the intersection of hardware and software. My 3D printing projects range from practical household fixes to complex mechanical prototypes...",
   },
 ];
 
 export default function AboutPage() {
   const [selectedInterest, setSelectedInterest] = useState<Interest | null>(null);
 
+  // Helper to render the correct modal content
+  const renderModalContent = () => {
+    if (!selectedInterest) return null;
+
+    if (selectedInterest.type === 'globe') {
+      return (
+        <div className="w-full min-h-full flex flex-col items-center justify-center p-4 py-8">
+          <div className="w-full max-w-5xl">
+            <InteractiveGlobe />
+            <p className="text-center text-slate-500 mt-6 animate-pulse">
+              Drag to explore • Click pins for memories
+            </p>
+          </div>
+        </div>
+      );
+    }
+
+    if (selectedInterest.type === 'list') {
+      return <CourseList />;
+    }
+
+    // Default: Gallery (Soccer)
+    return (
+      <div className="w-full min-h-full p-8 md:p-12">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+            <Image 
+              src={selectedInterest.image}
+              alt={selectedInterest.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="prose dark:prose-invert max-w-none">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+              {selectedInterest.fullContent}
+            </p>
+            {/* You can add more soccer photos here if you want */}
+            <div className="grid grid-cols-2 gap-4 mt-8">
+                {/* Placeholders for future soccer gallery images */}
+                <div className="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 text-sm">Action Shot 1</div>
+                <div className="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 text-sm">Team Photo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 space-y-20">
       
-      {/* 1. News Section (Now at the top)
+      {/* 1. News Section
       <section>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 border-b pb-4 border-slate-200 dark:border-slate-800">
           News
         </h2>
         <div className="space-y-8 border-l-2 border-slate-200 dark:border-slate-800 ml-3 pl-8 relative">
           {newsItems.map((item, i) => (
-            <div key={i} className="relative">
+            <div key={`${item.place}-${item.year}`} className="relative">
               <div className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-slate-950 bg-blue-500" />
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
                 <span className="text-sm font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
@@ -104,7 +154,7 @@ export default function AboutPage() {
       {/* 2. Interests Grid */}
       <section>
         <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 border-b pb-4 border-slate-200 dark:border-slate-800">
-          Learn more about me and my interests.
+          Learn about me and my interests
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {interests.map((interest) => (
@@ -113,7 +163,6 @@ export default function AboutPage() {
               onClick={() => setSelectedInterest(interest)}
               className="group relative h-64 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 text-left w-full"
             >
-              {/* Thumbnail Image */}
               <Image 
                 src={interest.image}
                 alt={interest.title}
@@ -121,7 +170,6 @@ export default function AboutPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               
-              {/* Overlay Text */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
                 <div className="flex items-center gap-2 text-blue-400 mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                   <interest.icon size={20} />
@@ -140,7 +188,7 @@ export default function AboutPage() {
         <div className="fixed inset-0 z-[100] bg-white dark:bg-slate-950 flex flex-col animate-in fade-in duration-200">
           
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shrink-0">
              <div className="flex items-center gap-3">
                 <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
                    <selectedInterest.icon size={24} />
@@ -150,7 +198,6 @@ export default function AboutPage() {
                 </h2>
              </div>
              
-             {/* Close Button */}
              <button 
                 onClick={() => setSelectedInterest(null)}
                 className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -159,41 +206,19 @@ export default function AboutPage() {
              </button>
           </div>
 
-          {/* Modal Content Area */}
-          <div className="flex-1 overflow-y-auto relative bg-slate-50 dark:bg-slate-900">
-            
-            {/* CONDITIONAL RENDER: Check if it's the Map or just a normal card */}
-            {selectedInterest.type === 'globe' ? (
-               // Render the Globe Full Screen
-               <div className="w-full min-h-full flex items-center justify-center p-4">
-                  <div className="w-full max-w-5xl h-full max-h-[800px]">
-                     <InteractiveGlobe />
-                     <p className="text-center text-slate-500 mt-4 animate-pulse">
-                        Drag to explore • Click pins for memories
-                     </p>
-                  </div>
-               </div>
-            ) : (
-               // Render Standard Content (Photo/Tech)
-               <div className="w-full h-full overflow-y-auto p-8 md:p-12">
-                  <div className="max-w-3xl mx-auto space-y-8">
-                     <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-                        <Image 
-                           src={selectedInterest.image}
-                           alt={selectedInterest.title}
-                           fill
-                           className="object-cover"
-                        />
-                     </div>
-                     <div className="prose dark:prose-invert max-w-none">
-                        <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-                           {selectedInterest.fullContent}
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            )}
-
+          {/* Modal Content - Dynamic based on Type */}
+          {/* We remove overflow-y-auto here because CourseList handles its own scrolling.
+              For others, we might want it. */}
+          <div className="flex-1 relative bg-slate-50 dark:bg-slate-900 overflow-hidden">
+             {selectedInterest.type === 'list' ? (
+                // Course List has its own scroll container
+                renderModalContent()
+             ) : (
+                // Wrapper for scrollable content (Globe/Soccer)
+                <div className="w-full h-full overflow-y-auto">
+                    {renderModalContent()}
+                </div>
+             )}
           </div>
         </div>
       )}
