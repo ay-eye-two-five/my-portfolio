@@ -174,7 +174,7 @@ export default function Experience() {
             <div className="flex gap-4 sm:gap-6">
               
               {/* Logo (Optional: kept for visual balance, hidden on mobile for space) */}
-              <div className="hidden sm:block flex-shrink-0 mt-1">
+              <div className="relative w-16 h-16 shrink-0">
                 <div className={`relative ${exp.logoClasses}`}>
                   <Image
                     src={exp.logo}
