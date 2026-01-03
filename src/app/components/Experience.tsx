@@ -51,7 +51,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Qral Group",
-    logo: "/favicon.ico",
+    logo: "/qral.ico",
     logoClasses: "w-14 h-14",
     website: "https://qral.com",
     role: {
