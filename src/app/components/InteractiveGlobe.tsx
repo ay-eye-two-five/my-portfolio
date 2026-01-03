@@ -166,15 +166,15 @@ const myLocations: LocationData[] = [
     category: "traveled",
   },
     {
-    lat: -33.4489,
-    lng: -70.6693,
+    lat: -12.0464,
+    lng: -77.0428,
     label: "Lima, Peru",
     description: "Visited in the winter.",
     date: "2026",
     category: "traveled",
   },
 ];
-
+s
 export default function InteractiveGlobe() {
   const [selectedLocation, setSelectedLocation] = useState<LocationData | null>(null);
   const globeEl = useRef<any>(null);
