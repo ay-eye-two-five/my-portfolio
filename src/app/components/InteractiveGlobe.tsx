@@ -207,7 +207,7 @@ export default function InteractiveGlobe() {
         pointAltitude={0.05}
         pointColor={(d: object) => categoryColors[(d as LocationData).category]}
         pointRadius={0.5} 
-        pointPulseRing={true}
+        //pointPulseRing={true}
         
         // Interaction
         onPointClick={(point: object) => {

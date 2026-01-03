@@ -75,6 +75,28 @@ const projects: Project[] = [
     image: "/ankle.png",
     link: "https://arxiv.org/pdf/2303.08105",
   },
+// {
+//     title: "Game-theoretic Model of Blepharisma Population and Cannibalism Dynamics",
+//     place: "IB Diploma Extended Essay",
+//     date: "2017",
+//     image: "/game.png",
+//     link: "https://docs.google.com/document/d/1fLTz32iuOFt32VhnFL5cc8VTKiCCgznIolIBtPy0Ktg/edit?usp=sharing",
+//   },
+  // {
+  //   title: "Game-theoretic Model of Blepharisma Population and Cannibalism Dynamics",
+  //   place: "IB Diploma Extended Essay",
+  //   date: "2017",
+  //   image: "/game.png",
+  //   link: "https://docs.google.com/document/d/1fLTz32iuOFt32VhnFL5cc8VTKiCCgznIolIBtPy0Ktg/edit?usp=sharing",
+  // },
+  // {
+  //   title: "Machine learning for Air Quality Models",
+  //   place: "IB Diploma Extended Essay",
+  //   date: "2017",
+  //   image: "/game.png",
+  //   link: "https://docs.google.com/document/d/1fLTz32iuOFt32VhnFL5cc8VTKiCCgznIolIBtPy0Ktg/edit?usp=sharing",
+  // },
+  // https://github.com/obin1/MLAQ?tab=readme-ov-file
 ];
 
 export default function Projects() {
@@ -125,7 +147,7 @@ export default function Projects() {
                 className="inline-flex items-center gap-2 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition-all"
               >
                 <ExternalLink size={14} />
-                View Publication
+                View Paper
               </a>
             </div>
           </div>

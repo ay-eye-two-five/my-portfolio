@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="relative group">
           {/* Decorative crisp border effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full opacity-25 group-hover:opacity-50 transition duration-500 blur-sm"></div>
-          <Link href="/about">
+          <Link href="/#home"> {/* CHANGE BACK TO ABOUT */}
             <div className="relative w-24 h-24 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white dark:border-slate-800 shadow-xl">
               {/* NOTE: Place your photo in the 'public' folder and name it 'profile.jpg' 
                 If you don't have one yet, this will show a placeholder.
