@@ -174,7 +174,7 @@ const myLocations: LocationData[] = [
     category: "traveled",
   },
 ];
-s
+
 export default function InteractiveGlobe() {
   const [selectedLocation, setSelectedLocation] = useState<LocationData | null>(null);
   const globeEl = useRef<any>(null);
