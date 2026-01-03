@@ -23,7 +23,7 @@ const projects: Project[] = [
     title: "Coupled active shape models for automated segmentation & landmark localization in high-resolution CT of the foot & ankle",
     place: "SPIE Medical Imaging",
     date: "2019",
-    image: "/foot.png",
+    image: "/foot.PNG",
     link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6647836/pdf/nihms-1041163.pdfD",
   },
   {
@@ -58,21 +58,21 @@ const projects: Project[] = [
     title: "U.S. Patent Application 17/797970: “Extendable Needle”",
     place: "U.S. Patent Office",
     date: "2021",
-    image: "/needle.png",
+    image: "/needle.PNG",
     link: "https://patentimages.storage.googleapis.com/eb/62/a4/73606e94f5d5d8/US20230200846A1.pdf",
   },
   {
     title: "Can lung airway geometry be used to predict autism? A preliminary machine learning-based study",
     place: "Anatomical Record",
     date: "2023",
-    image: "/ct.png",
+    image: "/ct.PNG",
     link: "https://anatomypubs.onlinelibrary.wiley.com/doi/epdf/10.1002/ar.25332",
   },
   {
     title: "Image Guidance for Robot-Assisted Ankle Fracture Repair",
     place: "arXiv Electrical Engineering",
     date: "2023",
-    image: "/ankle.png",
+    image: "/ankle.PNG",
     link: "https://arxiv.org/pdf/2303.08105",
   },
 // {
