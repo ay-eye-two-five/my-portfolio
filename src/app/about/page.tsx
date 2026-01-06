@@ -4,32 +4,33 @@ import { useState } from "react";
 import Image from "next/image";
 import InteractiveGlobe from "@/app/components/InteractiveGlobe";
 import CourseList from "@/app/components/CourseList"; // IMPORT THIS
-import { MapPin, Calendar, X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
+//import { MapPin, Calendar, X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
+import {X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
 
 // --- Data Definitions ---
 
-const newsItems = [
-  {
-    year: "2023 - Present",
-    place: "Sacramento, CA",
-    event: "Moved back to California to join the State Government.",
-  },
-  {
-    year: "2021",
-    place: "Madison, WI",
-    event: "Experienced the Midwest while working at Epic Systems.",
-  },
-  {
-    year: "2020",
-    place: "San Francisco, CA",
-    event: "Started career in consulting during the pandemic.",
-  },
-  {
-    year: "2018 - 2020",
-    place: "Baltimore, MD",
-    event: "Completed Master's at Johns Hopkins University.",
-  },
-];
+// const newsItems = [
+//   {
+//     year: "2023 - Present",
+//     place: "Sacramento, CA",
+//     event: "Moved back to California to join the State Government.",
+//   },
+//   {
+//     year: "2021",
+//     place: "Madison, WI",
+//     event: "Experienced the Midwest while working at Epic Systems.",
+//   },
+//   {
+//     year: "2020",
+//     place: "San Francisco, CA",
+//     event: "Started career in consulting during the pandemic.",
+//   },
+//   {
+//     year: "2018 - 2020",
+//     place: "Baltimore, MD",
+//     event: "Completed Master's at Johns Hopkins University.",
+//   },
+// ];
 
 type Interest = {
   id: string;
