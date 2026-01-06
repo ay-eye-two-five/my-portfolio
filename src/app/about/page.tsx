@@ -55,16 +55,16 @@ const interests: Interest[] = [
     id: "soccer",
     title: "Soccer",
     //description: "Player and fan. From Sunday leagues to watching the World Cup.",
-    image: "/soccer-interest.jpg", 
+    image: "/soccer.png", 
     type: "gallery",
     icon: Activity,
-    fullContent: "Soccer has been a huge part of my life since childhood. Whether it's playing in local competitive leagues or waking up at 4 AM to watch European matches, the beautiful game connects me to a global community. I currently play as a midfielder in a local Sacramento league.",
+    fullContent: "I played throughout my childhood until high school. Currently, I am a USSF and CIF certified referee.",
   },
   {
     id: "classes",
     title: "Classes & Learning",
     //description: "Continuous learning in ML, Systems Design, and Public Policy.",
-    image: "/classes-interest.jpg", 
+    image: "/grad.jpg", 
     type: "list", // SPECIAL TYPE
     icon: GraduationCap,
   },
@@ -94,29 +94,61 @@ export default function AboutPage() {
       return <CourseList />;
     }
 
-    // Default: Gallery (Soccer)
+   // Default: Gallery (Soccer)
     return (
       <div className="w-full min-h-full p-8 md:p-12">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <div className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-            <Image 
-              src={selectedInterest.image}
-              alt={selectedInterest.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="max-w-4xl mx-auto space-y-8">
+          
+          {/* 1. TEXT AT THE TOP */}
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
               {selectedInterest.fullContent}
             </p>
-            {/* You can add more soccer photos here if you want */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
-                {/* Placeholders for future soccer gallery images */}
-                <div className="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 text-sm">Action Shot 1</div>
-                <div className="h-40 bg-slate-200 dark:bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 text-sm">Team Photo</div>
-            </div>
           </div>
+
+          {/* 2. IMAGE GALLERY LAYOUT */}
+          {/* Grid: Left Column (1 Tall Image) | Right Column (2 Stacked Images) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[600px]">
+            
+            {/* LEFT COLUMN: 3129.JPG (Vertical) */}
+            {/* h-full makes it stretch to match the full height of the container */}
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-lg">
+              <Image 
+                src="/3129.JPG"
+                alt="Main soccer photo"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* RIGHT COLUMN: Stack of 2 */}
+            <div className="flex flex-col gap-4 h-full">
+              
+              {/* Top Right: IMG_5602.jpeg */}
+              <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-lg">
+                <Image 
+                  src="/IMG_5602.jpeg"
+                  alt="Soccer action shot"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Bottom Right: Placeholder for future image */}
+              <div className="relative flex-1 w-full bg-slate-100 dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 font-medium">
+                <Image 
+                  src="/ref.png"
+                  alt="Soccer action shot"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                 {/* When you have a 3rd photo, replace this div with another <Image /> block like above */}
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </div>
     );
@@ -167,7 +199,7 @@ export default function AboutPage() {
                 src={interest.image}
                 alt={interest.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6">
