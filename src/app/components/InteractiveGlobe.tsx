@@ -240,7 +240,7 @@ export default function InteractiveGlobe() {
         pointAltitude={0.05}
         pointColor={(d: object) => categoryColors[(d as LocationData).category]}
         pointRadius={0.5} 
-        pointPulseRing={true}
+        //pointPulseRing={true}
         onPointClick={(point: object) => {
           setSelectedLocation(point as LocationData);
           // Force stop immediately on click
