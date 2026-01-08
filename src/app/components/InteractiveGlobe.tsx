@@ -178,14 +178,42 @@ const myLocations: LocationData[] = [
 export default function InteractiveGlobe() {
   const [selectedLocation, setSelectedLocation] = useState<LocationData | null>(null);
   const globeEl = useRef<any>(null);
+  
+  // FIX: Use a Ref to track hover state instantly without re-renders
+  const isHovering = useRef(false);
 
-  // Auto-rotate the globe slowly
+  // Initialize rotation
   useEffect(() => {
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
       globeEl.current.controls().autoRotateSpeed = 0.5;
     }
   }, []);
+
+  // ROBUST LOGIC: Handle Rotation State
+  const handleMouseEnter = () => {
+    isHovering.current = true;
+    if (globeEl.current) {
+      globeEl.current.controls().autoRotate = false;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    isHovering.current = false;
+    // Only resume rotation if NO pop-up is currently open
+    if (globeEl.current && !selectedLocation) {
+      globeEl.current.controls().autoRotate = true;
+    }
+  };
+
+  const handleClosePopup = () => {
+    setSelectedLocation(null);
+    // If the mouse is NOT hovering when we close the popup, resume spin
+    if (globeEl.current && !isHovering.current) {
+      globeEl.current.controls().autoRotate = true;
+    }
+    // If mouse IS hovering, it stays paused (handled by handleMouseEnter)
+  };
 
   const getCategoryIcon = (category: LocationCategory) => {
     switch (category) {
@@ -196,52 +224,51 @@ export default function InteractiveGlobe() {
   }
 
   return (
-    <div className="relative w-full h-[600px] flex justify-center bg-slate-50 dark:bg-slate-950 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-move group">
+    <div 
+      className="relative w-full h-[600px] flex justify-center bg-slate-50 dark:bg-slate-950 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm cursor-move group"
+      // Apply the robust handlers here
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      // Also handle touch events for mobile
+      onTouchStart={handleMouseEnter}
+    >
       <Globe
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundColor="rgba(0,0,0,0)"
         pointsData={myLocations}
-        
-        // Pin Styling
         pointAltitude={0.05}
         pointColor={(d: object) => categoryColors[(d as LocationData).category]}
         pointRadius={0.5} 
-        //pointPulseRing={true}
-        
-        // Interaction
+        pointPulseRing={true}
         onPointClick={(point: object) => {
           setSelectedLocation(point as LocationData);
+          // Force stop immediately on click
           if (globeEl.current) {
             globeEl.current.controls().autoRotate = false;
           }
         }}
-        // No labels on globe surface
       />
       
-      {/* Helper text when nothing is selected */}
       {!selectedLocation && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm font-medium text-slate-400/70 bg-slate-900/20 backdrop-blur-sm px-3 py-1 rounded-full pointer-events-none transition-opacity group-hover:opacity-100 opacity-0">
            Click a pin for details
         </div>
       )}
 
-      {/* Central, Large Info Pop-up */}
       {selectedLocation && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-[90%] max-w-md md:max-w-lg bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl cursor-default animate-in fade-in zoom-in-95 duration-200">
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-[90%] max-w-md md:max-w-lg bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl cursor-default animate-in fade-in zoom-in-95 duration-200"
+          // Keep paused if hovering over the popup
+          onMouseEnter={handleMouseEnter} 
+        >
           <button
-            onClick={() => {
-              setSelectedLocation(null);
-              if (globeEl.current) {
-                globeEl.current.controls().autoRotate = true;
-              }
-            }}
+            onClick={handleClosePopup}
             className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
           >
             <X size={18} />
           </button>
 
-          {/* Header: Icon & Title */}
           <div className="flex items-start gap-3 mb-4 pr-10">
             <div className="mt-1 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
                  {getCategoryIcon(selectedLocation.category)}
@@ -250,7 +277,6 @@ export default function InteractiveGlobe() {
                 <h3 className="font-bold text-xl text-slate-900 dark:text-slate-100 leading-tight mb-1">
                 {selectedLocation.label}
                 </h3>
-                {/* Date with Calendar Icon */}
                 <div className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
                     <Calendar size={14} />
                     {selectedLocation.date}
@@ -258,10 +284,8 @@ export default function InteractiveGlobe() {
             </div>
           </div>
 
-          {/* Description (Larger text area) */}
           <div className="text-base text-slate-700 dark:text-slate-300 leading-relaxed max-h-60 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
             <p>{selectedLocation.description}</p>
-            {/* You can add <img> tags here later if needed */}
           </div>
         </div>
       )}

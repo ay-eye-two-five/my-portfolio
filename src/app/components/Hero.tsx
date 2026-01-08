@@ -15,13 +15,13 @@ export default function Hero() {
           </h1>
           
           <h2 className="mt-4 text-xl text-slate-600 dark:text-slate-400 font-medium">
-            I am a continuous learner and problem solver
+            Biomedical Engineer • Computer Scientist • Continuous learner and problem solver
           </h2>
           
           <p className="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed max-w-lg mx-auto md:mx-0">
-            With 10+ years experience researching AI applications in medicine, <br/> 
+            10+ years experience researching AI applications in medicine, <br/> 
             3.5 years of full time work experience (+0.5 as an intern), <br/>
-            9 publications, 1 patent, and 45+ research citations. 
+            9 publications, and 1 patent pending. 
           </p>
 
           {/* Social Links */}

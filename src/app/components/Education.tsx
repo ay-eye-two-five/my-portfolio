@@ -38,7 +38,7 @@ const education: School[] = [
         gpa: "3.5",
         description: "Specializing in Artificial Intelligence",
         status: "completed", 
-        diplomaUrl: "/mscs.pdf", 
+        diplomaUrl: "https://commencement.stanford.edu/sites/g/files/sbiybj17666/files/media/file/commencement2025.pdf#page=27", 
       },
       {
         title: "MS Biomedical Data Science",
@@ -65,7 +65,7 @@ const education: School[] = [
         gpa: "3.9",
         description: "Specializing in Biomedical Data Science",
         status: "completed",
-        diplomaUrl: "/bs.pdf", 
+        diplomaUrl: "https://commencement.jhu.edu/wp-content/uploads/2020/05/2020-Commencement-Program.pdf", 
       },
       {
         title: "MBA",
