@@ -113,7 +113,7 @@ export default function AboutPage() {
             
             {/* LEFT COLUMN: 3129.JPG (Vertical) */}
             {/* h-full makes it stretch to match the full height of the container */}
-            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full h-[500px] md:h-full rounded-2xl shadow-lg">
               <Image 
                 src="/3129.JPG"
                 alt="Main soccer photo"
