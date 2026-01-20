@@ -254,6 +254,23 @@ const courses: Course[] = [
     instructor: "Mridula Sharma",
     description: "Basic concepts of computer systems, architecture, C and assembly programming, memory organization, and Linux OS."
   },
+  {
+    title: "Leadership Theory",
+    code: "CLE 332",
+    institution: "Johns Hopkins",
+    year: "2020",
+    instructor: "Mary Clare Coghlan",
+    description: "History of Leadership Theory from the \"Great Man\" theory of born leaders to Transformational Leadership theory of non-positional learned leadership. Transformational Leadership theory postulates that leadership can be learned and enhanced. The course will explore the knowledge base and skills necessary to be an effective leader.",
+  },
+  {
+    title: "Biochemistry and Molecular Engineering",
+    code: "BME 221",
+    institution: "Johns Hopkins",
+    year: "2018",
+    instructor: "Eileen Haase, Elizabeth Logsdon, Kevin Yarema",
+    description: "Quantitative analysis of reactions between molecules, including receptor-ligand and antigen-antibody specificity, enzyme catalysis, genetic information, protein processing and secretion, cell physiology and cell functions"
+  }
+  
 ];
 
 export default function CourseList() {
