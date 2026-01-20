@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { X, Briefcase, Home, Plane, Calendar } from "lucide-react";
+import NextImage from "next/image";
 
 // Dynamically import the Globe to avoid server-side issues
 const Globe = dynamic(() => import("react-globe.gl"), {
@@ -20,9 +21,10 @@ type LocationData = {
   lat: number;
   lng: number;
   label: string;
-  description: string;
+  description?: string | React.ReactNode;
   date: string;
   category: LocationCategory;
+  image?: string;
 };
 
 // Define colors based on category
@@ -116,6 +118,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the summer and fall.",
     date: "2025",
     category: "traveled",
+    image: "/japan.png"
   },
   {
     lat: 34.6947,
@@ -124,6 +127,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the summer.",
     date: "2025",
     category: "traveled",
+    image: "/japan.png"
   },
   {
     lat: 13.7563,
@@ -132,6 +136,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the summer.",
     date: "2025",
     category: "traveled",
+    image: "/thailand.png"
   },
   {
     lat: 3.1390,
@@ -140,6 +145,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the fall.",
     date: "2025",
     category: "traveled",
+    image: "/malaysia.png"
   },
   {
     lat: 6.9271,
@@ -148,6 +154,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the fall.",
     date: "2025",
     category: "traveled",
+    image: "/sl.png"
   },
   {
     lat: 9.7489,
@@ -156,22 +163,37 @@ const myLocations: LocationData[] = [
     description: "Visited in the winter.",
     date: "2025",
     category: "traveled",
+    image: "/cr.png"
   },
   {
     lat: -33.4489,
     lng: -70.6693,
     label: "Santiago, Chile",
-    description: "Carey Business School Global Immersion Trip.",
+    description: (
+    <>
+      <a href="/agenda.pdf" target="_blank" className="text-blue-500 underline hover:text-blue-400">Carey Business School Global Immersion Trip.</a>
+    </>
+    ),
     date: "2026",
     category: "traveled",
+    image: "/chile.png"
   },
-    {
+  {
     lat: -12.0464,
     lng: -77.0428,
     label: "Lima, Peru",
     description: "Visited in the winter.",
     date: "2026",
     category: "traveled",
+  },
+  {
+    lat: 30.5728,
+    lng: 104.0668,
+    label: "Chengdu, China",
+    description: "Stopped for a layover",
+    date: "2025",
+    category: "traveled",
+    image: "/china.png"
   },
 ];
 
@@ -283,6 +305,20 @@ export default function InteractiveGlobe() {
                 </div>
             </div>
           </div>
+
+{/* RENDER IMAGE LOGIC */}
+          {/* This block ONLY renders if selectedLocation.image exists */}
+          {selectedLocation.image && (
+            <div className="relative w-full h-56 mb-4 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800">
+              <NextImage 
+                src={selectedLocation.image}
+                alt={selectedLocation.label}
+                fill
+                // object-contain: ENSURES FULL IMAGE IS VISIBLE (No Cropping)
+                className="object-contain"
+              />
+            </div>
+          )}
 
           <div className="text-base text-slate-700 dark:text-slate-300 leading-relaxed max-h-60 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700">
             <p>{selectedLocation.description}</p>
