@@ -95,7 +95,7 @@ export default function AboutPage() {
       return <CourseList />;
     }
 
-   // Default: Gallery (Soccer)
+// Default: Gallery (Soccer)
     return (
       <div className="w-full min-h-full p-8 md:p-12">
         <div className="max-w-4xl mx-auto space-y-8">
@@ -108,42 +108,48 @@ export default function AboutPage() {
           </div>
 
           {/* 2. IMAGE GALLERY LAYOUT */}
-          {/* Grid: Left Column (1 Tall Image) | Right Column (2 Stacked Images) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[600px]">
+          {/* Mobile: h-auto (let it grow vertically). Desktop: h-[600px] (lock the bento box height) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-[600px]">
             
-            {/* LEFT COLUMN: 3129.JPG (Vertical) */}
-            {/* h-full makes it stretch to match the full height of the container */}
-            <div className="relative w-full h-[500px] md:h-full rounded-2xl shadow-lg">
+            {/* --- LEFT COLUMN (Vertical Image) --- */}
+            {/* Mobile: h-[500px] box. Desktop: h-full (matches parent 600px) */}
+            <div className="relative w-full h-[500px] md:h-full rounded-2xl shadow-lg overflow-hidden bg-slate-100 dark:bg-slate-800">
               <Image 
                 src="/3129.JPG"
                 alt="Main soccer photo"
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
+                // MOBILE: object-contain (Show WHOLE image, no cropping)
+                // DESKTOP: object-cover (Fill the box neatly)
+                className="object-contain md:object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
 
-            {/* RIGHT COLUMN: Stack of 2 */}
-            <div className="flex flex-col gap-4 h-full">
+            {/* --- RIGHT COLUMN (Stack of 2) --- */}
+            {/* Mobile: h-auto (stack them). Desktop: h-full (fill parent) */}
+            <div className="flex flex-col gap-4 h-auto md:h-full">
               
-              {/* Top Right: IMG_5602.jpeg */}
-              <div className="relative flex-1 w-full rounded-2xl overflow-hidden shadow-lg">
+              {/* Top Right Image */}
+              {/* Mobile: h-64 (fixed height). Desktop: flex-1 (fill half of column) */}
+              <div className="relative w-full h-64 md:flex-1 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dark:bg-slate-800">
                 <Image 
                   src="/IMG_5602.jpeg"
                   alt="Soccer action shot"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  // MOBILE: object-contain. DESKTOP: object-cover.
+                  className="object-contain md:object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              {/* Bottom Right: Placeholder for future image */}
-              <div className="relative flex-1 w-full bg-slate-100 dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-400 font-medium">
+              {/* Bottom Right Image */}
+              {/* Mobile: h-64. Desktop: flex-1 */}
+              <div className="relative w-full h-64 md:flex-1 bg-slate-100 dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center overflow-hidden">
                 <Image 
                   src="/ref.png"
-                  alt="Soccer action shot"
+                  alt="Referee photo"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  // MOBILE: object-contain. DESKTOP: object-cover.
+                  className="object-contain md:object-cover hover:scale-105 transition-transform duration-500"
                 />
-                 {/* When you have a 3rd photo, replace this div with another <Image /> block like above */}
               </div>
 
             </div>
