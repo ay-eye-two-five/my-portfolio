@@ -269,7 +269,72 @@ const courses: Course[] = [
     year: "2018",
     instructor: "Eileen Haase, Elizabeth Logsdon, Kevin Yarema",
     description: "Quantitative analysis of reactions between molecules, including receptor-ligand and antigen-antibody specificity, enzyme catalysis, genetic information, protein processing and secretion, cell physiology and cell functions"
+  },
+  {
+    title: "BME Modeling & Design",
+    code: "BME 111",
+    institution: "Johns Hopkins",
+    year: "2017",
+    instructor: "Eileen Haase, Elizabeth Logsdon",
+    description: "Introduces engineering principles to solve design problems that are biological, physiological, and/or medical."
+  },
+  {
+    title: "Discrete Mathematics",
+    code: "MATH 208",
+    institution: "UND",
+    year: "2020",
+    description: "Introduction to proof by induction, modular arithmetic, introductory graph theory, and propositional and predicate logic." 
+  },
+  {
+    title: "Elements in Microeconomics",
+    code: "ECON 102",
+    institution: "Johns Hopkins",
+    year: "2020",
+    description: "Introduction to microeconomic principles including supply and demand,relative prices, the allocation of resources and the distribution of goods and services; theory of consumer behavior, theory of the firm, and competition and monopoly."
+  },
+  {
+    title: "Expository Writing",
+    code: "ENGL 114",
+    institution: "Johns Hopkins",
+    year: "2018",
+    description: "Introduction to the elements of academic argument, including the Fundamental Structure of Academic Argument."
+  },
+  {
+    title: "General Physics and Lab",
+    code: "PHYS 101/102",
+    institution: "Johns Hopkins",
+    year: "2017",
+    description: "Mechanics, heat, sound, electricity, magnetism, light, and modern physics."
+  },
+  {
+    title: "General Psychology",
+    code: "PSYC 300",
+    institution: "Sacramento City College",
+    year: "2015",
+    description: "Scientific method, statistics, biological determinants, as well as general processes of behavior, such as development, learning, language, intelligence, perception, motivation, emotion, personality, and mental health.."
+  },
+  {
+    title: "Introductory Chemistry and Lab",
+    code: "CHEM 101/102",
+    institution: "Johns Hopkins",
+    year: "2017",
+    description: "Introduction to the principles and concepts of chemistry including atomic structure, chemical bonding, stoichiometry, and laboratory techniques."
+  },
+  {
+    title: "Cognitive Psychology",
+    code: "PSYC 110",
+    institution: "Johns Hopkins",
+    year: "2020",
+    description: "Introduction to the scientific study of human cognition including perception, attention, memory, language, problem solving, reasoning, and decision making."
+  },
+  {
+    title: "Probability and Statistics",
+    code: "AMS 110",
+    institution: "Stony Brook",
+    year: "2019",
+    description: "Introduction to probability theory and statistical inference. Topics include Markov chain models; binomial, Poisson normal, exponential and chi-square random variables; tests of hypotheses; confidence intervals; t-tests; analysis of variance, regression and contingency tables."
   }
+
   
 ];
 
