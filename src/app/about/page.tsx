@@ -9,28 +9,52 @@ import {X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
 
 // --- Data Definitions ---
 
-// const newsItems = [
-//   {
-//     year: "2023 - Present",
-//     place: "Sacramento, CA",
-//     event: "Moved back to California to join the State Government.",
-//   },
-//   {
-//     year: "2021",
-//     place: "Madison, WI",
-//     event: "Experienced the Midwest while working at Epic Systems.",
-//   },
-//   {
-//     year: "2020",
-//     place: "San Francisco, CA",
-//     event: "Started career in consulting during the pandemic.",
-//   },
-//   {
-//     year: "2018 - 2020",
-//     place: "Baltimore, MD",
-//     event: "Completed Master's at Johns Hopkins University.",
-//   },
-// ];
+const newsItems = [
+  {
+    year: "January 2025",
+    place: "Baltimore, MD",
+    event: "I have been accepted into the Flex MBA program at Johns Hopkins Carey Business School with a Dean's Scholarship!",
+  },
+  {
+    year: "December 2024",
+    place: "Stanford, CA",
+    event: "I have completed the degree requirements for the MS in Computer Science at Stanford University!",
+  },
+  {
+    year: "September 2021",
+    place: "Sacramento, CA",
+    event: "Moved back to California to start grad school at Stanford and later join the State Government.",
+  },
+  {
+    year: "May 2021",
+    place: "Madison, WI",
+    event: "Experienced the Midwest while working at Epic Systems.",
+  },
+  {
+    year: "July 2020",
+    place: "San Francisco, CA",
+    event: "Started career in consulting during the pandemic.",
+  },
+  {
+    year: "May 2020",
+    place: "Baltimore, MD",
+    event: (
+      <>
+        I graduated from Johns Hopkins during the pandemic after summer semester in my 3rd year! Thank you to the entire BME and CS faculty+staff and my advisors, <a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Vidal" target="_blank" className="dark:text-blue-600 hover:underline">René Vidal</a> and <a href="https://www.cs.jhu.edu/~abhishek/" target="_blank" className="dark:text-blue-600 hover:underline">Abhishek Jain</a>.
+        This summer I will be interning as an Automation Engineer at BMS.
+      </>
+    ), 
+  },
+    {
+    year: "June 2017",
+    place: "Sacramento, CA",
+    event: (
+      <>
+        I just graduated from the IB Diploma Program at Mira Loma High School and will start this fall as a freshman at Johns Hopkins! 
+      </>
+    ), 
+  },
+];
 
 type Interest = {
   id: string;
@@ -262,6 +286,39 @@ export default function AboutPage() {
         </div>
       )}
 
+      {/* 3. TIMELINE / NEWS SECTION */}
+      <section className="pb-20">
+        {/* <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 border-b pb-4 border-slate-200 dark:border-slate-800">
+          Timeline & Updates
+        </h2> */}
+
+        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-10">
+          {newsItems.map((item, index) => (
+            <div key={index} className="relative pl-8 group">
+              
+              {/* Timeline Dot */}
+              <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 border-white dark:border-slate-950 bg-blue-500 group-hover:scale-125 transition-transform duration-300" />
+              
+              {/* Content */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
+                <span className="font-bold text-blue-600 dark:text-blue-400 text-sm whitespace-nowrap">
+                  {item.year}
+                </span>
+                <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                  {item.place}
+                </h3>
+              </div>
+              
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                {item.event}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
+    
   );
 }
