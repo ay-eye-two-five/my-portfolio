@@ -333,7 +333,30 @@ const courses: Course[] = [
     institution: "Stony Brook",
     year: "2019",
     description: "Introduction to probability theory and statistical inference. Topics include Markov chain models; binomial, Poisson normal, exponential and chi-square random variables; tests of hypotheses; confidence intervals; t-tests; analysis of variance, regression and contingency tables."
+  },
+  {
+    title: "Software Engineering",
+    code: "COMP 3520",
+    institution: "Software Engineering",
+    year: "2019",
+    description: "Software engineering techniques for dependable and secure systems, reliability engineering, software evolution, software maintenance, quality management, configuration management and more."
+  },
+  {
+    title: "Statistical Physics",
+    code: "BME 241",
+    institution: "Johns Hopkins",
+    year: "2018",
+    instructor: "Michael Beer",
+    description: "Topics included quantitative statistical formulation of entropy and its application in thermodynamic optimization and conversion principles, the Gibbs/Boltzmann distribution, mixing, and phase transitions."
+  },
+  {
+    title: "Stories of People, Science, and Medicine",
+    code: "MSCH 211",
+    institution: "Johns Hopkins",
+    year: "2018",
+    description: "Intersession class taught by a Nobel Laureate. Fun fact: Peter Agre said I 'might be the next Francis Collins' (I think he was joking)."
   }
+
 
   
 ];
