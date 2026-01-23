@@ -305,6 +305,7 @@ const courses: Course[] = [
     code: "PHYS 101/102",
     institution: "Johns Hopkins",
     year: "2017",
+    instructor: "Robert Leheny, Daniel Reich, Morris Swartz",
     description: "Mechanics, heat, sound, electricity, magnetism, light, and modern physics."
   },
   {
@@ -319,6 +320,7 @@ const courses: Course[] = [
     code: "CHEM 101/102",
     institution: "Johns Hopkins",
     year: "2017",
+    instructor: "Kenneth Karlin",
     description: "Introduction to the principles and concepts of chemistry including atomic structure, chemical bonding, stoichiometry, and laboratory techniques."
   },
   {

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -28,10 +29,11 @@ export default function Navbar() {
       <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Logo / Name */}
-        <div className="font-bold text-xl text-slate-900 dark:text-slate-100">
-          Asef Islam
-        </div>
-
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <div className="font-bold text-xl text-slate-900 dark:text-slate-100">
+            Asef Islam
+          </div>
+        </Link>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
