@@ -290,6 +290,7 @@ const courses: Course[] = [
     code: "ECON 102",
     institution: "Johns Hopkins",
     year: "2020",
+    instructor: "Muhammad Husain",
     description: "Introduction to microeconomic principles including supply and demand,relative prices, the allocation of resources and the distribution of goods and services; theory of consumer behavior, theory of the firm, and competition and monopoly."
   },
   {
@@ -325,6 +326,7 @@ const courses: Course[] = [
     code: "PSYC 110",
     institution: "Johns Hopkins",
     year: "2020",
+    instructor: "Jonathan Flombaum",
     description: "Introduction to the scientific study of human cognition including perception, attention, memory, language, problem solving, reasoning, and decision making."
   },
   {
@@ -339,6 +341,7 @@ const courses: Course[] = [
     code: "COMP 3520",
     institution: "Software Engineering",
     year: "2019",
+    instructor: "Nagiza Samatova",
     description: "Software engineering techniques for dependable and secure systems, reliability engineering, software evolution, software maintenance, quality management, configuration management and more."
   },
   {
@@ -354,6 +357,7 @@ const courses: Course[] = [
     code: "MSCH 211",
     institution: "Johns Hopkins",
     year: "2018",
+    instructor: "Peter Agre",
     description: "Intersession class taught by a Nobel Laureate. Fun fact: Peter Agre said I 'might be the next Francis Collins' (I think he was joking)."
   }
 
