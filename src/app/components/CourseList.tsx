@@ -544,19 +544,38 @@ const courses: Course[] = [
 export default function CourseList() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Filter AND Sort logic
   const filteredCourses = courses
-      .filter((course) => {
-        // 1. Convert the search term to lowercase once
-        const term = searchTerm.toLowerCase();
-        
-        // 2. Check if ANY value in the course object matches the term
-        return Object.values(course).some((value) => 
-          // String(value) handles numbers or null/undefined safely
-          String(value).toLowerCase().includes(term)
-        );
-      })
-      // Sort by year descending (Newest first)
-      .sort((a, b) => Number(b.year) - Number(a.year));
+    .filter((course) => {
+      // 1. Create a "Searchable String" of all course data combined
+      // We join them with spaces to ensure words don't run together
+      const searchContent = [
+        course.title,
+        course.code,
+        course.institution,
+        course.year,
+        course.instructor,
+        course.description,
+        // If you added images, we can search those URLs too, or safely ignore them
+        //(course.images || []).join(" ") 
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      // 2. Split the user's search query into individual words (tokens)
+      const searchTokens = searchTerm.toLowerCase().trim().split(/\s+/);
+
+      // 3. Check that EVERY word typed appears SOMEWHERE in the content
+      // This allows "Stanford 2025" to match even if words are far apart
+      return searchTokens.every((token) => searchContent.includes(token));
+    })
+    .sort((a, b) => {
+      // Safe sort that handles non-number years (like "Spring 2025") gracefully
+      // It strips out non-digits to compare purely by year number
+      const yearA = parseInt(a.year.replace(/\D/g, '')) || 0;
+      const yearB = parseInt(b.year.replace(/\D/g, '')) || 0;
+      return yearB - yearA;
+    });
 
   return (
     <div className="w-full h-full flex flex-col bg-slate-50 dark:bg-slate-900">
