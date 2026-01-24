@@ -185,6 +185,7 @@ const myLocations: LocationData[] = [
     description: "Visited in the winter.",
     date: "2026",
     category: "traveled",
+    image: "/IMG_5697.jpeg"
   },
   {
     lat: 30.5728,
