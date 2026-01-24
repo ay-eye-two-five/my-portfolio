@@ -87,7 +87,7 @@ const courses: Course[] = [
     description: "Projects course for graduate students working on semester-long projects related to computer-integrated interventions, AI in medicine, and medical image analysis."
   },
   {
-    title: "Machine Learning (App-Driven)",
+    title: "Machine Learning",
     code: "CS 475",
     institution: "Johns Hopkins",
     year: "2019",
