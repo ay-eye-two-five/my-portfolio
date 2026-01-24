@@ -465,8 +465,76 @@ const courses: Course[] = [
     year: "2025",
     description: "Worst and average case analysis. Recurrences and asymptotics. Efficient algorithms for sorting, searching, and selection. Data structures: binary search trees, heaps, hash tables. Algorithm design techniques: divide-and-conquer, dynamic programming, greedy algorithms, amortized analysis, randomization. Algorithms for fundamental graph problems: minimum-cost spanning tree, connected components, topological sort, and shortest paths."
   },
-  
-
+  {
+    title: "Strategic Management",
+    code: "BU.150.620",
+    institution: "Johns Hopkins",
+    year: "2025",
+    instructor: "David G. Smith",
+    description: "Topics include the internal and external environment analysis, competitive interactions, and business strategy. We will also introduce concepts important for corporate strategy, global strategy, and strategy execution. This course emphasizes the application of theory to real world strategic issues facing managers today."
+  },
+  {
+    title: "Accounting & Financial Reporting",
+    code: "BU.210.620",
+    institution: "Johns Hopkins",
+    year: "2025",
+    instructor: "Jordan Rippy",
+    description: "Accounting cycle; basic business transactions involving assets, liabilities, equity, revenues, and expenses; as well as preparation and understanding of financial statements, including balance sheets, statements of income, and cash flows."
+  },
+  {
+    title: "Corporate Finance",
+    code: "BU.231.620",
+    institution: "Johns Hopkins",
+    year: "2025",
+    instructor: "Gianni De Nicolo",
+    description: "This course deals primarily with a firm’s investment and financing decisions, and its interactions with the capital markets. Students are taught the fundamental principles of financial valuation and analysis, which provide a solid foundation for all other finance courses."
+  },
+  {
+    title: "Cybersecurity",
+    code: "BU.330.730",
+    institution: "Johns Hopkins",
+    year: "2025",
+    instructor: "Javad Abed", 
+    description: "Topics include qualitative and quantitative risk analysis, audits, metrics, vulnerability assessment, capital budgeting, return on security investment, legal and regulatory compliance, and security best practices."
+  },
+  {
+    title: "Marketing Management",
+    code: "BU.410.620",
+    institution: "Johns Hopkins",
+    year: "2025",
+    instructor: "Ning Li",
+    description: "This course covers principles of market-driven managerial decision making that determine competitiveness in dynamic consumer and organizational markets. Particular areas of emphasis include industry analyses, dynamics of competition, market segmentation, target marketing, channels of distribution, and product and pricing decisions.",
+  },
+  {
+    title: "Statistical Analysis",
+    code: "BU.510.601",
+    institution: "Johns Hopkins",
+    year: "2025",
+    description: "The course covers sampling distributions, probability, confidence intervals, hypothesis testing, regression and correlation, basic modeling, analysis of variance, and chi-square testing. The course emphasizes statistics to solve management problems.",
+    instructor: "Bonnie Robeson"
+  },
+  {
+    title: "Global Immersion: Chile - Businesss and Sustainability in Latin America",
+    code: "BU.003.903",
+    institution: "Johns Hopkins",
+    year: "2026",
+    instructor: "Luis Quintero",
+    description: "Experiential learning course where both Carey Business School faculty and professors of local universities will provide classes on the history and current status of innovation in business in Chile and their impacts on sustainability. Of particular importance will be the discussion of how private initiatives can deliver successful business opportunities while contributing to local sustainability. Corporate and government organization visits will complement lectures and case studies to assess how businesses are adjusting to changing business landscapes.",
+  },
+  // {
+  //   title: "Quantum Computing: Business Opportunities and Challenges",
+  //   code: "BU.004.707",
+  //   institution: "Johns Hopkins",
+  //   year: "2026",
+  //   description: "Exploration of quantum computing technologies and their potential to disrupt industries. Focuses on business applications, strategic implications, and the challenges of adopting quantum technologies."
+  // },
+  // {
+  //   title: "Business Analytics",
+  //   code: "BU.520.601",
+  //   institution: "Johns Hopkins",
+  //   year: "2026",
+  //   description: "Data-driven decision making using quantitative methods. Topics include data visualization, predictive modeling, data mining, and the use of analytics to solve complex business problems."
+  // }
 
 
 
@@ -480,7 +548,9 @@ export default function CourseList() {
     course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
     course.institution.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
+  // Sort by year descending (Newest first)
+    .sort((a, b) => Number(b.year) - Number(a.year));
 
   return (
     <div className="w-full h-full flex flex-col bg-slate-50 dark:bg-slate-900">
