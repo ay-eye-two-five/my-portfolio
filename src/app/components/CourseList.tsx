@@ -544,13 +544,19 @@ const courses: Course[] = [
 export default function CourseList() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredCourses = courses.filter((course) => 
-    course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    course.institution.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-  // Sort by year descending (Newest first)
-    .sort((a, b) => Number(b.year) - Number(a.year));
+  const filteredCourses = courses
+      .filter((course) => {
+        // 1. Convert the search term to lowercase once
+        const term = searchTerm.toLowerCase();
+        
+        // 2. Check if ANY value in the course object matches the term
+        return Object.values(course).some((value) => 
+          // String(value) handles numbers or null/undefined safely
+          String(value).toLowerCase().includes(term)
+        );
+      })
+      // Sort by year descending (Newest first)
+      .sort((a, b) => Number(b.year) - Number(a.year));
 
   return (
     <div className="w-full h-full flex flex-col bg-slate-50 dark:bg-slate-900">
