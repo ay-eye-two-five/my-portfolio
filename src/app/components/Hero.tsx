@@ -27,7 +27,7 @@ export default function Hero() {
           {/* Social Links */}
           <div className="mt-4 flex items-center justify-center md:justify-start gap-6">
             <SocialLink href="mailto:asef@cs.stanford.edu" icon={<Mail size={20} />} label="Email" />
-            <SocialLink href="/resume.pdf" icon={<FileText size={20} />} label="Resume" />
+            <SocialLink href="/AsefIslamResume012326.pdf" icon={<FileText size={20} />} label="Resume" />
             <SocialLink href="https://linkedin.com/in/asefislam" icon={<Linkedin size={20} />} label="LinkedIn" />
             <SocialLink href="https://scholar.google.com/citations?user=ttaypUQAAAAJ&hl=en" icon={<GraduationCap size={20} />} label="Scholar" />
             <SocialLink href="https://github.com/ay-eye-two-five" icon={<Github size={20} />} label="GitHub" />
