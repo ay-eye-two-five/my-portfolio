@@ -168,7 +168,7 @@ export default function AboutPage() {
               {/* Mobile: h-64. Desktop: flex-1 */}
               <div className="relative w-full h-64 md:flex-1 bg-slate-100 dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex items-center justify-center overflow-hidden">
                 <Image 
-                  src="/ref2.png"
+                  src="/ref2.PNG"
                   alt="Referee photo"
                   fill
                   // MOBILE: object-contain. DESKTOP: object-cover.
