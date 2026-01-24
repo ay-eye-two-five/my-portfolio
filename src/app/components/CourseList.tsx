@@ -361,7 +361,113 @@ const courses: Course[] = [
     year: "2018",
     instructor: "Peter Agre",
     description: "Intersession class taught by a Nobel Laureate. Fun fact: Peter Agre said I 'might be the next Francis Collins' (I think he was joking)."
-  }
+  }, 
+  {
+    title: "Beginning Tennis",
+    code: "PHYSWELL 26",
+    institution: "Stanford",
+    year: "2022",
+    instructor: "Matthew Thornton",
+    description: "I played tennis with my dad growing up but took this class for fun as a refresher"
+  },
+  {
+    title: "Natural Language Understanding",
+    code: "CS 224U",
+    institution: "Stanford",
+    year: "2023",
+    instructor: "Christopher Potts",
+    description: "Covers lexical semantics, distributed representations of meaning, relation extraction, semantic parsing, sentiment analysis, and dialogue agents, with special lectures on developing projects, presenting research results, and making connections with industry."
+  }, 
+  {
+    title: "Introduction to Computer Graphics and Imaging",
+    code: "CS 148",
+    institution: "Stanford",
+    year: "2023",
+    instructor: "Ron Fedkiw",
+    description: "underlying mathematical concepts including triangles, normals, interpolation, texture mapping, bump mapping, fundamental understanding of light and color, engineering models such as the BRDF, basic lighting and shading models, ray tracing technology."
+  },
+  {
+    title: "Decision Making Under Uncertainty",
+    code: "CS 238",
+    institution: "Stanford",
+    year: "2023",
+    instructor: "Mykel Kochenderfer",
+    description: "Computational methods for solving decision problems with stochastic dynamics, model uncertainty, and imperfect state information. Topics include Bayesian networks, influence diagrams, dynamic programming, reinforcement learning, and partially observable Markov decision processes. Applications cover air traffic control, aviation surveillance systems, autonomous vehicles, and robotic planetary exploration."
+  },
+  {
+    title: "Trust and Safety",
+    code: "CS 152",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Alex Stamos, Jeffrey Hancock, Shelby Grossman",
+    description: "Trust and Safety is an emerging field of professional and academic effort to build technologies that allow people to positively use the internet while being safe from harm. This course provides an introduction to the ways online services are abused to cause real human harm and the potential social, operational, product, legal and engineering responses."
+  },
+  {
+    title: "Robotics and Autonomous Systems Seminar",
+    code: "CS 529",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Marco Pavone",
+    description: "Seminar series covering current research in robotics and autonomous systems, featuring guest speakers from academia and industry."
+  }, 
+  {
+    title: "Of Decisions and Dilemmas: The Art of Leadership",
+    code: "MED 245",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Dean Winslow, Paul Costello",
+    description: "Medical school seminar with guest speakers including Steve Kerr, Tara VanDerveer, Gretchen Carlson, John Lewis, Rich Fierro and more."
+  },
+  {
+    title: "Client-Side Internet Technologies",
+    code: "CS 193C",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Patrick Young",
+    description: "Covers the fundamentals of client-side web development including HTML, CSS, JavaScript, and modern frameworks. Students will learn to build responsive and interactive web applications."
+  },
+  {
+    title: "Introduction to Statistical Learning",
+    code: "STATS 216V",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Kelly Bodwin",
+    description: "Linear and polynomial regression, logistic regression and linear discriminant analysis; cross-validation and the bootstrap, model selection and regularization methods (ridge and lasso); nonlinear models, splines and generalized additive models; tree-based methods, random forests and boosting; support-vector machines, principal components and clustering."
+  },
+  {
+    title: "Conversational Virtual Assistants with Deep Learning",
+    code: "CS 224V",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Monica Lam",
+    description: "This is a project-oriented course, where students will gain hands-on experience in either methodology research or applying the concepts to create useful assistants for a domain of their choice. Topics include: (1) growing LLMs' knowledge through a combination of manual supervised learning and self-learning, (2) stopping LLMs from hallucination by grounding them with external corpora of knowledge, which is necessary for handling new, live, private as well as long-tail data, (3) handling external data corpora in different domains including structured and unstructured data, (4) experimentation and evaluation of conversational assistants based on LLMs, (5) controlling LLMs to achieve tasks, (6) persuasive LLMs, (7) multilingual assistants, and (8) combining voice and graphical interfaces."
+  },
+  {
+    title: "AI-Assisted Healthcare",
+    code: "CS 337",
+    institution: "Stanford",
+    year: "2024",
+    instructor: "Amit Kaushal, Arnold Milstein, Ehsan Adeli, Fei-Fei Li",
+    description: "This course is geared at anyone who is looking to use AI and machine learning to make a real-world positive impact on human health."
+  },
+  {
+    title: "Medical Physics Seminar",
+    code: "BMP 256",
+    institution: "Stanford",
+    year: "2025",
+    instructor: "Cynthia Chuang, Xuejun Gu",
+    description: "Seminar series covering radiation therapy technology, image-guided therapy, treatment planning, quality assurance, artificial intelligence, adaptive therapy, computational models, radiobiology, and clinical practice."
+  }, 
+  {
+    title: "Design and Analysis of Algorithms",
+    code: "CS 161",
+    institution: "Stanford",
+    year: "2025",
+    description: "Worst and average case analysis. Recurrences and asymptotics. Efficient algorithms for sorting, searching, and selection. Data structures: binary search trees, heaps, hash tables. Algorithm design techniques: divide-and-conquer, dynamic programming, greedy algorithms, amortized analysis, randomization. Algorithms for fundamental graph problems: minimum-cost spanning tree, connected components, topological sort, and shortest paths."
+  },
+  
+
+
 
 
   
