@@ -11,6 +11,11 @@ import {X, Globe as GlobeIcon, Activity, GraduationCap } from "lucide-react";
 
 const newsItems = [
   {
+    year: "January 2026",
+    place: "Sacramento, CA",
+    event: "I have been promoted to ITS2 with the state!",
+  },
+  {
     year: "January 2025",
     place: "Baltimore, MD",
     event: "I have been accepted into the Flex MBA program at Johns Hopkins Carey Business School with a Dean's Scholarship!",
