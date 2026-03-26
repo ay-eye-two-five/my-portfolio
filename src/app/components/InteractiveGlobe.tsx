@@ -191,7 +191,7 @@ const myLocations: LocationData[] = [
     lat: 30.5728,
     lng: 104.0668,
     label: "Chengdu, China",
-    description: "Stopped for a layover",
+    description: "Visited in September",
     date: "2025",
     category: "traveled",
     image: "/china.png"
@@ -207,12 +207,12 @@ const myLocations: LocationData[] = [
   },
   {
     lat: 4.2105,
-    lng: 101.9758,
+    lng: 73.5091,
     label: "Male and Rangali Island, Maldives",
     description: "Visited in February",
     date: "2026",
     category: "traveled",
-    image: "/maldives.png"
+    image: "/maldives.jpg"
   },
   {
     lat: 23.1291,
@@ -221,7 +221,7 @@ const myLocations: LocationData[] = [
     description: "Visitied in February",
     date: "2026",
     category: "traveled",
-    image: "/guangzhou.png"
+    image: "/guangzhou.jpg"
   }
 ];
 
