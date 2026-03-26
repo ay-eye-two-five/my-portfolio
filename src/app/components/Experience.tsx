@@ -25,9 +25,24 @@ const experiences: ExperienceItem[] = [
     logoClasses: "w-16 h-16",
     website: "https://ca.gov",
     role: {
-      title: "Data Protection Specialist",
+      title: "Senior Infrastructure Engineer (ITS2)",
+      department: "Consumer Services",
+      period: "January 2026 – Present",
+      location: "Sacramento, CA",
+      description: [
+        "Oversaw enterprise-wide virtualization efforts using OpenShift and Ansible"
+      ],
+    },
+  },
+  {
+    company: "State of California",
+    logo: "/cagov.png",
+    logoClasses: "w-16 h-16",
+    website: "https://ca.gov",
+    role: {
+      title: "Data Protection Specialist (ITS1)",
       department: "Health and Human Services",
-      period: "November 2023 – Present",
+      period: "November 2023 – December 2025",
       location: "Sacramento, CA",
       description: [
         "Led implementation of enterprise-wide solutions for data classification and protection and developed web dashboard with PowerBI, Python and Snowflake for continuous monitoring and analytics across a state agency with 2000+ employees"
