@@ -514,27 +514,37 @@ const courses: Course[] = [
     instructor: "Bonnie Robeson"
   },
   {
-    title: "Global Immersion: Chile - Businesss and Sustainability in Latin America",
+    title: "Global Immersion: Chile - Business and Sustainability in Latin America",
     code: "BU.003.903",
     institution: "Johns Hopkins",
     year: "2026",
     instructor: "Luis Quintero",
     description: "Experiential learning course where both Carey Business School faculty and professors of local universities will provide classes on the history and current status of innovation in business in Chile and their impacts on sustainability. Of particular importance will be the discussion of how private initiatives can deliver successful business opportunities while contributing to local sustainability. Corporate and government organization visits will complement lectures and case studies to assess how businesses are adjusting to changing business landscapes.",
   },
-  // {
-  //   title: "Quantum Computing: Business Opportunities and Challenges",
-  //   code: "BU.004.707",
-  //   institution: "Johns Hopkins",
-  //   year: "2026",
-  //   description: "Exploration of quantum computing technologies and their potential to disrupt industries. Focuses on business applications, strategic implications, and the challenges of adopting quantum technologies."
-  // },
-  // {
-  //   title: "Business Analytics",
-  //   code: "BU.520.601",
-  //   institution: "Johns Hopkins",
-  //   year: "2026",
-  //   description: "Data-driven decision making using quantitative methods. Topics include data visualization, predictive modeling, data mining, and the use of analytics to solve complex business problems."
-  // }
+
+  {
+    title: "Business Analytics",
+    code: "BU.520.601",
+    institution: "Johns Hopkins",
+    year: "2026",
+    description: "Data-driven decision making using quantitative methods. Topics include data visualization, predictive modeling, data mining, and the use of analytics to solve complex business problems."
+  },
+
+  {
+    title: "Operations Management",
+    code: "BU.680.620",
+    institution: "Johns Hopkins",
+    year: "2026",
+    description: "This course provides a conceptual and actionable introduction to operations management and covers a ​wide​ range of topics,​ including operations strategy, process ​mapping and ​design, queuing theory, inventory management, lean manufacturing, and revenue management."
+  },
+
+  {
+    title: "Health Information Technology",
+    code: "BU.883.702",
+    institution: "Johns Hopkins",
+    year: "2026",
+    description: "This course examines health care organizations from the perspective of managing the information systems that exist within the enterprise."
+  }
 
 
 
