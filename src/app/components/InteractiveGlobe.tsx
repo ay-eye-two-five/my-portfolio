@@ -196,6 +196,33 @@ const myLocations: LocationData[] = [
     category: "traveled",
     image: "/china.png"
   },
+  {
+    lat: 37.5665,
+    lng: 126.9780,
+    label: "Seoul, South Korea",
+    description: "Visited in February",
+    date: "2026",
+    category: "traveled",
+    image: "/korea.jpg"
+  },
+  {
+    lat: 4.2105,
+    lng: 101.9758,
+    label: "Male and Rangali Island, Maldives",
+    description: "Visited in February",
+    date: "2026",
+    category: "traveled",
+    image: "/maldives.png"
+  },
+  {
+    lat: 23.1291,
+    lng: 113.2644,
+    label: "Guangzhou, China",
+    description: "Visitied in February",
+    date: "2026",
+    category: "traveled",
+    image: "/guangzhou.png"
+  }
 ];
 
 export default function InteractiveGlobe() {
