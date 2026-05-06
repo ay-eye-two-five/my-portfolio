@@ -204,8 +204,8 @@ export default function Experience() {
               <div className="flex-1 min-w-0">
                 
                 {/* Row 1: Employer (Left) --- Dates (Right) */}
-                <div className="flex justify-between items-baseline mb-1 gap-2">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 truncate">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1 gap-1 sm:gap-2">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {exp.company}
                   </h3>
                   <span className="text-sm text-slate-500 dark:text-slate-400 whitespace-nowrap flex-shrink-0">
