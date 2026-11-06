@@ -463,6 +463,7 @@ const courses: Course[] = [
     code: "CS 161",
     institution: "Stanford",
     year: "2025",
+    instructor: "Matthew Sotoudeh",
     description: "Worst and average case analysis. Recurrences and asymptotics. Efficient algorithms for sorting, searching, and selection. Data structures: binary search trees, heaps, hash tables. Algorithm design techniques: divide-and-conquer, dynamic programming, greedy algorithms, amortized analysis, randomization. Algorithms for fundamental graph problems: minimum-cost spanning tree, connected components, topological sort, and shortest paths."
   },
   {
@@ -527,6 +528,7 @@ const courses: Course[] = [
     code: "BU.520.601",
     institution: "Johns Hopkins",
     year: "2026",
+    instructor: "Ali Eshrag",
     description: "Data-driven decision making using quantitative methods. Topics include data visualization, predictive modeling, data mining, and the use of analytics to solve complex business problems."
   },
 
@@ -535,6 +537,7 @@ const courses: Course[] = [
     code: "BU.680.620",
     institution: "Johns Hopkins",
     year: "2026",
+    instructor: "Arnab Bisi",
     description: "This course provides a conceptual and actionable introduction to operations management and covers a ​wide​ range of topics,​ including operations strategy, process ​mapping and ​design, queuing theory, inventory management, lean manufacturing, and revenue management."
   },
 
@@ -543,12 +546,50 @@ const courses: Course[] = [
     code: "BU.883.702",
     institution: "Johns Hopkins",
     year: "2026",
+    instructor: "Atiye Erol",
     description: "This course examines health care organizations from the perspective of managing the information systems that exist within the enterprise."
-  }
+  },
+  {
+    title: "Introduction to High Performance Computing",
+    code: "ME 344",
+    institution: "Stanford",
+    year: "2026",
+    instructor: "Steve Jones, Mourad Bouache",
+    description: "Topics include GPU/TPU architectures, parallel computing, cluster operating systems, resource management, containerization, and advanced methods such as attention and mixture-of-experts. Hands-on labs emphasize building and configuring HPC systems, optimizing networks, managing resources, and deploying AI workloads in computer vision and natural language processing."
+  },
+  {
+    title: "Ethical Analyst",
+    code: "MS&E 254",
+    institution: "Stanford",
+    year: "2026",
+    instructor: "Dale Nesbitt",
+    description: "The course addresses personal life, human action and relations in society, technology, medicine, coercion, harming, stealing, imposition of risk, deception, and other ethical issues."
+  },
+  {
+    title: "Business Microeconomics",
+    code: "BU.220.620",
+    institution: "JHU Carey",
+    year: "2025",
+    instructor: "Itay Fainmesser",
+    description: "Major topics include consumer choice and market demand, costs and profit maximization, market structures, output/price decisions, and strategic interactions."
+  },
+  {
+    title: "An overview of Biomedical Data Science",
+    code: "BMDS 202",
+    institution: "Stanford",
+    year: "2026",
+    instructor: "Olivier Gevaert, Mark Musen, Akshay Chaudhuri",
+    description: "This course introduces the data modalities and methods valuable to ask and answer probing and novel questions that advance biomedicine. You will get exposure to a variety of current data types from imaging and omics to patient-centric and digital health generated data types."
+  },
+  {
+    title: "Data Science for Medicine",
+    code: "BMDS 215",
+    institution: "Stanford",
+    year: "2026",
+    instructor: "Nigam Shah",
+    description: "The widespread adoption of electronic health records (EHRs) has created a new source of big data namely, the record of routine clinical practice as a by-product of care. This graduate class will teach you how to use EHRs and other patient data to discover new clinical knowledge and improve healthcare. "
+  },
 
-
-
-  
 ];
 
 export default function CourseList() {
