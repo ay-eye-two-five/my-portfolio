@@ -115,7 +115,7 @@ const myLocations: LocationData[] = [
     lat: 35.6762,
     lng: 139.6503,
     label: "Tokyo, Japan",
-    description: "Visited in the summer and fall.",
+    description: "Trip Count: 3",
     date: "2025",
     category: "traveled",
     image: "/japan.png"
@@ -218,10 +218,84 @@ const myLocations: LocationData[] = [
     lat: 23.1291,
     lng: 113.2644,
     label: "Guangzhou, China",
-    description: "Visitied in February",
+    description: "Visited in February",
     date: "2026",
     category: "traveled",
     image: "/guangzhou.jpg"
+  },
+  {
+    lat: 53.3498,
+    lng: -6.2603,
+    label: "Dublin, Ireland",
+    description: "Visited in June",
+    date: "2026",
+    category: "traveled",
+    image: "/ireland.jpg"
+  },
+  {
+    lat: 48.8566,
+    lng: 2.3522,
+    label: "Paris, France",
+    description: "Visited in June",
+    date: "2026",
+    category: "traveled",
+    image: "/paris.jpg"
+  },
+  {
+    lat: 41.9028,
+    lng: 12.4964,
+    label: "Rome, Italy",
+    description: "Visited in June",
+    date: "2026",
+    category: "traveled",
+    image: "/rome.jpg"
+  },
+  {
+    lat: 40.8518,
+    lng: 14.2681,
+    label: "Naples, Italy",
+    description: (
+    <>
+      <a href="/acm.pdf" target="_blank" className="text-blue-500 underline hover:text-blue-400">Visited while attending ACM BCB 2026.</a>
+    </>
+    ),
+    date: "2026",
+    category: "traveled",
+  },
+  {
+    lat: 22.3193,
+    lng: 114.1694,
+    label: "Hong Kong, China",
+    description: "Visited in September",
+    date: "2026",
+    category: "traveled",
+    image: "/hk.jpg"
+  },
+  {
+    label: "Taipei, Taiwan",
+    lat: 25.0330,
+    lng: 121.5654,
+    description: "Visited in September",
+    date: "2026",
+    category: "traveled",
+    image: "/taiwan.jpg"
+  },
+  {
+    label: "Kathmandu, Nepal",
+    lat: 27.7172,
+    lng: 85.3240,
+    description: "Visited in September",
+    date: "2026",
+    category: "traveled",
+    image: "/nepal.jpg"
+  },
+  {
+    label: "Honolulu, Hawaii",
+    lat: 21.3069,
+    lng: -157.8583,
+    description: "Trip Count: 2",
+    date: "2025",
+    category: "traveled",
   }
 ];
 
